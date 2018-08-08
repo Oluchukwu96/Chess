@@ -10,7 +10,7 @@ var board = new chessboard([0,0],500);
 var mouseX=0;
 var mouseY=0;
 //timing
-var maxtime = 10;
+var maxtime = 3;
 var currenttime =0;
 var searchtime = 1;
 var playerid = 0;
@@ -68,7 +68,7 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.touches[0].pageX - canvas.offsetLeft;
 		mouseY=event.touches[0].pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "aX "+event.pageX+" Y "+mouseY;
+		document.getElementById("gamestate").innerHTML = "bX "+event.pageX+" Y "+mouseY;
 		if(currenttime==0){
 			if(istouching){
 				board.mousedown([mouseX,mouseY]);
