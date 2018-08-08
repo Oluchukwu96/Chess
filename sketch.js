@@ -55,6 +55,14 @@ function setup() {
 		dragging = false;
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
+		document.getElementById("gamestate").innerHTML = "E";
+		if(istouching){
+			board.mousedown([mouseX,mouseY]);
+		}
+		else{
+			board.mouseup([mouseX,mouseY]);
+		}
+		istouching = !istouching;
 		//board.mouseup([mouseX,mouseY]);
 	},false);
 	//update the mouse position everytime it is moved
@@ -67,14 +75,7 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "t";
-		if(istouching){
-			board.mousedown([mouseX,mouseY]);
-		}
-		else{
-			board.mouseup([mouseX,mouseY]);
-		}
-		istouching = !istouching;
+		
 		//board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
