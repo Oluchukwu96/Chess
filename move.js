@@ -127,11 +127,11 @@ function move(size=8){
 					if(count==0){
 						count++;
 					}
-					if(count>0){
+					else if(count>0){
 						return null;
 					}
 				}
-				else if(id>0){
+				else if(id>0 && id<10){
 					return null;
 				}
 			}
