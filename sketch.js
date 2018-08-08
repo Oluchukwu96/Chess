@@ -71,7 +71,8 @@ function setup() {
 		var y = event.pageY - canvas.offsetTop;
         	mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		alert("haha")
+		alert("haha");
+		document.getElementById("gamestate").innerHTML = "Touched";
 		if(!istouching){
 			board.mousedown([mouseX,mouseY]);
 		}
