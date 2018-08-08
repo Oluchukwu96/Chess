@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>Chess GUI</Title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel= "stylesheet" type="text/css" href="style.css">
+	<script src="square.js"></script>
+	<script src="piece.js"></script>
+	<script src="move.js"></script>
+	<script src="brain.js"></script>
+	<script src="chessboard.js"></script>
+	<script src="sketch.js"></script>
+  </head>
+  <body onload="setup();">
+	<div class="top">
+	   <h2>Play chess against my algorithm</h2>
+	   <h4 id ="gamestate">...</h4>
+	   <h2></h2>
+	</div>
+	<div id ="container">
+		<div class = "first">
+			<canvas id="game" width="500" height="500" style="border:1px solid #007700;">
+				The game canvas can be viewed here
+			</canvas>
+		</div>
+		<div class = "second">
+			<button class="binfo" type="button"  onclick="playaswhite()">Play As White</button>
+			<button class="binfo" type="button" onclick="playasblack()">Play As Black</button>
+			<button class="binfo" type="button" onclick="flip()">Flip</button>
+			<button class="binfo" type="button" onclick="undo()">Undo</button>
+			<p class="write">Choose Difficulty</p>
+			<button class="binfo" type="button" onclick="playeasy()">Easy</button>
+			<button class="binfo" type="button" onclick="playmedium()">Medium</button>
+			<button class="binfo" type="button" onclick="playhard()">Hard</button>
+			<p id ="mode" class="write">Current: Medium</p>
+			<p id = "time" class="write">Search Time: 1s</p>
+				<!--button class="center" type="button" onclick="resetScreen()">Clear Screen</button-->
+		</div>
+		<div id ="clear"></div>
+	<div>
+	<div class = "footer">
+		<p class="write">This is a simple chess engine writing in pure javascript.
+						Its an on going project so expect regular updates</p>
+		<p class="write">Enjoy!</p>
+		<p class="write"><small>GUI and Engine created by Oluchukwu Okafor, contact me at ojokafor1@gmail.com</small></p>
+	</div>
+  </body>
+</html>
