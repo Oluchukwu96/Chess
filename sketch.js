@@ -14,6 +14,7 @@ var maxtime = 10;
 var searchtime = 1;
 var playerid = 0;
 var hasplayed = false;
+var istouching = false;
 function setup() {
 	var canvas = document.getElementById('game');
 	playing=true;
@@ -44,8 +45,8 @@ function setup() {
 	},false);
 	//adding an event listener to our canvas
 	canvas.addEventListener('mousedown', function(event) {
-        var x = event.pageX - canvas.offsetLeft;
-		var y = event.pageY - canvas.offsetTop;
+        	mouseX=event.pageX - canvas.offsetLeft;
+		mouseY=event.pageY - canvas.offsetTop;
 		board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
@@ -64,8 +65,8 @@ function setup() {
 	},false);
 	//adding an event listener to our canvas
 	canvas.addEventListener('touchstart', function(event) {
-        var x = event.pageX - canvas.offsetLeft;
-		var y = event.pageY - canvas.offsetTop;
+        	mouseX=event.pageX - canvas.offsetLeft;
+		mouseY=event.pageY - canvas.offsetTop;
 		board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
