@@ -68,7 +68,6 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.touches[0].pageX - canvas.offsetLeft;
 		mouseY=event.touches[0].pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "bX "+event.pageX+" Y "+mouseY;
 		if(currenttime==0){
 			if(istouching){
 				board.mousedown([mouseX,mouseY]);
