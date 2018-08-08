@@ -11,6 +11,7 @@ var mouseX=0;
 var mouseY=0;
 //timing
 var maxtime = 10;
+var currenttime =0;
 var searchtime = 1;
 var playerid = 0;
 var hasplayed = false;
@@ -55,7 +56,7 @@ function setup() {
 		dragging = false;
 		mouseX=event.touches[0].pageX - canvas.offsetLeft;
 		mouseY=event.touches[0].pageY - canvas.offsetTop;
-		board.mouseup([mouseX,mouseY]);
+		//board.mouseup([mouseX,mouseY]);
 	},false);
 	//update the mouse position everytime it is moved
 	canvas.addEventListener('touchmove', function(event){
@@ -67,15 +68,19 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.touches[0].pageX - canvas.offsetLeft;
 		mouseY=event.touches[0].pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "pX "+event.pageX+" Y "+mouseY;
-		if(istouching){
-			//board.mousedown([mouseX,mouseY]);
+		document.getElementById("gamestate").innerHTML = "X "+event.pageX+" Y "+mouseY;
+		if(currenttime==0){
+			if(istouching){
+				board.mousedown([mouseX,mouseY]);
+			}
+			else{
+				board.mouseup([mouseX,mouseY]);
+			}
+			istouching = !istouching;
+			currenttime=maxtime;
 		}
-		else{
-			//board.mouseup([mouseX,mouseY]);
-		}
-		istouching = !istouching;
-		board.mousedown([mouseX,mouseY]);
+		
+		//board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
 	board.init();
@@ -112,6 +117,9 @@ function gameloop(){
 	//board.play();
 	if(istouching){
 		//board.mousemove([mouseX,mouseY]);
+	}
+	if(currenttime>0){
+		currenttime--;
 	}
 	if(playerid==0){
 		if(board.turn%2==1){
