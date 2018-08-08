@@ -67,6 +67,12 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
+		if(istouching){
+			//board.mousedown([mouseX,mouseY]);
+		}
+		else{
+			//board.mouseup([mouseX,mouseY]);
+		}
 		board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
