@@ -55,7 +55,7 @@ function setup() {
 		dragging = false;
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "X "+event.pageX+" Y "+mouseY;
+		document.getElementById("gamestate").innerHTML = "pX "+event.pageX+" Y "+mouseY;
 		if(istouching){
 			board.mousedown([mouseX,mouseY]);
 		}
