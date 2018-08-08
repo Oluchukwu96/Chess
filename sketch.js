@@ -68,7 +68,7 @@ function setup() {
 	canvas.addEventListener('touchstart', function(event) {
         	mouseX=event.touches[0].pageX - canvas.offsetLeft;
 		mouseY=event.touches[0].pageY - canvas.offsetTop;
-		document.getElementById("gamestate").innerHTML = "X "+event.pageX+" Y "+mouseY;
+		document.getElementById("gamestate").innerHTML = "aX "+event.pageX+" Y "+mouseY;
 		if(currenttime==0){
 			if(istouching){
 				board.mousedown([mouseX,mouseY]);
@@ -116,7 +116,7 @@ function gameloop(){
 	//AI play black
 	//board.play();
 	if(istouching){
-		//board.mousemove([mouseX,mouseY]);
+		board.mousemove([mouseX,mouseY]);
 	}
 	if(currenttime>0){
 		currenttime--;
