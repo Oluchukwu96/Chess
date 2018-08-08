@@ -135,7 +135,11 @@ function gameloop(){
 	}
 	var sc =0;
 	if(board.AI.alllegalmoves().length==0){
-		if(board.turn%2==0){
+		if(board.AI.isstalemate()){
+			this.board.gameover= true;
+			document.getElementById("gamestate").innerHTML = "stalemate";
+		}
+		else if(board.turn%2==0){
 			sc=-200;
 		}
 		else{
