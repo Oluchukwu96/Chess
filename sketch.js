@@ -52,35 +52,29 @@ function setup() {
 	}, false);
 	//touch events
 	canvas.addEventListener('touchend', function(event){
-		alert("haha");
 		dragging = false;
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		//board.mouseup([mouseX,mouseY]);
+		board.mouseup([mouseX,mouseY]);
 	},false);
 	//update the mouse position everytime it is moved
 	canvas.addEventListener('touchmove', function(event){
-		alert("when");
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		//board.mousemove([mouseX,mouseY]);
+		board.mousemove([mouseX,mouseY]);
 	},false);
 	//adding an event listener to our canvas
 	canvas.addEventListener('touchstart', function(event) {
-		var x = event.pageX - canvas.offsetLeft;
-		var y = event.pageY - canvas.offsetTop;
         	mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
-		alert("haha");
-		document.getElementById("gamestate").innerHTML = "Touched";
 		if(!istouching){
-			board.mousedown([mouseX,mouseY]);
+			//board.mousedown([mouseX,mouseY]);
 		}
 		else{
-			board.mouseup([mouseX,mouseY]);
+			//board.mouseup([mouseX,mouseY]);
 		}
 		istouching = !istouching;
-		//board.mousedown([mouseX,mouseY]);
+		board.mousedown([mouseX,mouseY]);
 		//click(x,y);
 	}, false);
 	board.init();
