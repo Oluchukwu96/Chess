@@ -52,6 +52,7 @@ function setup() {
 	}, false);
 	//touch events
 	canvas.addEventListener('touchend', function(event){
+		alert("haha");
 		dragging = false;
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
@@ -59,12 +60,15 @@ function setup() {
 	},false);
 	//update the mouse position everytime it is moved
 	canvas.addEventListener('touchmove', function(event){
+		alert("when");
 		mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
 		//board.mousemove([mouseX,mouseY]);
 	},false);
 	//adding an event listener to our canvas
 	canvas.addEventListener('touchstart', function(event) {
+		var x = event.pageX - canvas.offsetLeft;
+		var y = event.pageY - canvas.offsetTop;
         	mouseX=event.pageX - canvas.offsetLeft;
 		mouseY=event.pageY - canvas.offsetTop;
 		alert("haha")
